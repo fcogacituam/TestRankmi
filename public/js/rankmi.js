@@ -41,8 +41,8 @@ app.controller("httpController",function($scope,$timeout,gitService){
 			if(timeout)	$timeout.cancel(timeout);
 			
 			timeout= $timeout(function(){
-				var urlUser='https://api.github.com/users/'+newUser+'?access_token=09a9f615a8eeaedde31bf7ec1a4b0ae698005e0a';
-				var urlRepos='https://api.github.com/users/'+newUser+'/repos?access_token=09a9f615a8eeaedde31bf7ec1a4b0ae698005e0a';
+				var urlUser='https://api.github.com/users/'+newUser;
+				var urlRepos='https://api.github.com/users/'+newUser+'/repos';
 				gitService.event(urlUser).then(function(data,status){
 					console.log(data);
 					$scope.user = data.data;
